@@ -1,6 +1,7 @@
 var ractive = new Ractive({
   el: '#container',
-  template: '#template',
+  template: '#container-template',
+
   data: {
       name: '#cloudwatching',
       subtitle: 'bc clouds are cool and stuff',
@@ -10,6 +11,7 @@ var ractive = new Ractive({
           'crazy freaking storm clouds, also Kansas, 6/14/14'
       ]
   },
+
   oninit () {
       this.on( 'create', function () {
         var newItem = this.get( 'newLI' );
@@ -17,4 +19,24 @@ var ractive = new Ractive({
         this.set( 'newLI', 'new item' );
       });
   }
+
+});
+
+var ractive2 = new Ractive({
+  el: '#sidebar-container',
+  template: '#sidebar-template',
+
+  data: {
+    open: true, //false,
+    customize: true, //false,
+    themeColor: 'lightblue'
+  },
+
+  oninit () {
+      this.on( 'toggle-customize', function () {
+        this.toggle( 'customize' );
+        this.toggle( 'open' );
+      });
+  }
+
 });

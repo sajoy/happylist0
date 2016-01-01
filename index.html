@@ -8,9 +8,10 @@
 
 <body>
   <div id='container'></div>
-  <div id='sidebar'></div>
+  <div id='sidebar-container'></div>
 
-  <script id='template' type='text/ractive'>
+  <script id='container-template' type='text/ractive'>
+
     <h1 contenteditable='true'>{{name}}</h1>
     <h2 contenteditable='true'>{{subtitle}}</h2>
 
@@ -21,6 +22,21 @@
     {{/lists}}
         <li><input on-enter='create' value='{{newLI}}'/></li>
     </ul>
+  </script>
+
+  <script id='sidebar-template' type='text/ractive'>
+    <section id='sidebar' class='{{#if open}}open{{/if}}'>
+        <div class='option customize {{#if customize}}selected{{/if}}' on-click='toggle-customize'>
+            🎨
+        </div>
+
+        {{#if customize}}
+        <section class='customize'>
+            color: {{themeColor}}
+        </section>
+        {{/if}}
+
+    </section>
   </script>
 
   <script src='js/ractive.js'></script>
