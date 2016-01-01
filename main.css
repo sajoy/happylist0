@@ -1,0 +1,64 @@
+body {
+    margin: 5%;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: lightgray;
+    margin-top: 0;
+    margin-left: 22px;
+}
+
+h1, h2 {
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+a {
+    color: lightblue;
+}
+
+input {
+    color: lightgray;
+}
+input:focus {
+    color: black;
+    background-color: lightblue;
+}
+input, input:focus {
+    font-size: 1em;
+    font-family: sans-serif;
+    border: none;
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus {
+    background-color: lightblue;
+    color: black;
+    width: max-content;
+    border:none;
+    outline:none;
+}
+
+/*     container      */
+
+#container {
+    max-width: 80%;
+}
+
+/*       sidebar       */
+
+#sidebar {
+    width: 35px;
+    background-color: lightblue;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+}
