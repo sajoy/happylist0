@@ -34,6 +34,7 @@ input, input:focus {
     font-size: 1em;
     font-family: sans-serif;
     border: none;
+    outline: 0;
 }
 
 [contenteditable="true"]:active,
@@ -78,11 +79,27 @@ input, input:focus {
     height: max-content;
 }
 
-
 section.customize {
     background-color: rgba(255,255,255,.7);
     color: #191919;
     padding: 5px;
     margin-top: 8px;
     margin-right: 12px;
+}
+
+.customize input {
+    color: lightgray;
+}
+.customize input:focus {
+    color: black;
+    background-color: none;
+}
+.customize input, .customize input:focus {
+    font-size: 1em;
+    font-family: sans-serif;
+    border: none;
+    outline: 0;
+    color: #191919;
+    background: transparent;
+    width: max-content;
 }

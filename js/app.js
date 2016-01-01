@@ -37,6 +37,10 @@ var ractive2 = new Ractive({
         this.toggle( 'customize' );
         this.toggle( 'open' );
       });
+
+      this.on( 'saveStyles', function () {
+        var newColor = this.get( 'themeColor' );
+      });
   }
 
 });
