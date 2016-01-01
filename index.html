@@ -34,7 +34,10 @@
 
         {{#if customize}}
         <section class='customize'>
-            color: <input on-enter='saveStyles' value='{{themeColor}}'/>
+            <span class='how-to'>// click on an element to edit its styles</span>
+            <section class='edit-styles'>
+                color: <input on-enter='saveStyles' value='{{themeColor}}'/>
+            </section>
         </section>
         {{/if}}
 

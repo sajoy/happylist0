@@ -80,11 +80,18 @@ input, input:focus {
 }
 
 section.customize {
-    background-color: rgba(255,255,255,.7);
-    color: #191919;
-    padding: 5px;
     margin-top: 8px;
     margin-right: 12px;
+}
+
+.edit-styles {
+    padding: 5px;
+    background-color: rgba(255,255,255,.7);
+    color: #191919;
+}
+
+.how-to {
+    color: white;
 }
 
 .customize input {
