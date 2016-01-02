@@ -1,6 +1,7 @@
 # ul.happy (a prototype)
 * micro-blogging for the cumpulsive list maker
 * for happy lists, wish lists, qualitative self lists, all the selfies, etc.
+* with full (or a lot of) css customization to inspire people to learn css
 * brake it: [http://sajoy.github.io/happylist0/](http://sajoy.github.io/happylist0/)
 
 # user stories
