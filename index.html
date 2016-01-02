@@ -8,25 +8,37 @@
 
 <body>
   <div id='container'></div>
-  <div id='sidebar-container'></div>
 
   <script id='container-template' type='text/ractive'>
-    <h1 contenteditable='true'>{{name}}</h1>
-    <h2 contenteditable='true'>{{subtitle}}</h2>
+    <section style='{{#if customize}}cursor: alias !important{{/if}}'>
+        <list/>
+        <sidebar/>
+    </section>
+  </script>
+
+  <script id='list-template' type='text/ractive'>
+    <h1 contenteditable='{{canEdit}}'>{{name}}</h1>
+    <h2 contenteditable='{{canEdit}}'>{{subtitle}}</h2>
 
     <ul>
         <li><a href='#'> {{'<<'}} </a></li>
-    {{#lists}}
-        <li>{{this}}</li>
-    {{/lists}}
-        <li><input on-enter='create' value='{{newLI}}'/></li>
+        {{#lists}}
+            <li contenteditable='{{canEdit}}'>{{this}}</li>
+        {{/lists}}
+        <li>
+            <input
+                on-enter='{{#unless customize}}create{{/unless}}'
+                value='{{newLI}}'
+                disabled='{{!canEdit}}'/>
+        </li>
     </ul>
   </script>
 
   <script id='sidebar-template' type='text/ractive'>
     <section id='sidebar'
         class='{{#if open}}open{{/if}}'
-        style='background-color: {{themeColor}}'>
+        style='background-color: {{themeColor}}'
+        on-click='{{#if customize}}selectEl{{/if}}'>
 
         <div class='option customize {{#if customize}}selected{{/if}}' on-click='toggle-customize'>
             🎨

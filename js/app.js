@@ -1,15 +1,23 @@
-var ractive = new Ractive({
-  el: '#container',
-  template: '#container-template',
+var List = Ractive.extend({
+  el: '#list-container',
+  template: '#list-template',
 
-  data: {
-      name: '#cloudwatching',
-      subtitle: 'bc clouds are cool and stuff',
-      newLI: 'new item',
-      lists: [
-          'cirrus, Kansas, 6/12/14 ',
-          'crazy freaking storm clouds, also Kansas, 6/14/14'
-      ]
+  data: function () {
+      return {
+          name: '#cloudwatching',
+          subtitle: 'bc clouds are cool and stuff',
+          newLI: 'new item',
+          lists: [
+              'cirrus, Kansas, 6/12/14 ',
+              'crazy freaking storm clouds, also Kansas, 6/14/14'
+          ]
+      }
+  },
+
+  computed: {
+    canEdit: function () {
+        return !this.get( 'customize' );
+    }
   },
 
   oninit () {
@@ -22,14 +30,14 @@ var ractive = new Ractive({
 
 });
 
-var ractive2 = new Ractive({
+var Sidebar = Ractive.extend({
   el: '#sidebar-container',
   template: '#sidebar-template',
 
-  data: {
-    open: true, //false,
-    customize: true, //false,
-    themeColor: 'lightblue'
+  data: function () {
+      return {
+        themeColor: 'lightblue'
+      }
   },
 
   oninit () {
@@ -42,5 +50,30 @@ var ractive2 = new Ractive({
         var newColor = this.get( 'themeColor' );
       });
   }
-
 });
+
+var list = new List(),
+    sidebar = new Sidebar(),
+    app = new Ractive({
+        el: document.body,
+        template: '#container-template',
+        data: {
+            customize: true, //false,
+            open: true, //false,
+            edit: false
+        },
+        components: {
+            list: List,
+            sidebar: Sidebar
+        },
+        oninit () {
+            this.on( '*.selectEl', function ( e ) {
+                // select element
+                // populate edit-styles with styles of element
+                // where / how to save / inject the styles?
+
+                var attr = e.node.attributes;
+                console.log( attr );
+            });
+        }
+    })
