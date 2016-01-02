@@ -25,12 +25,14 @@
         {{#lists}}
             <li class='{{#if canEdit}}edit{{/if}} {{#if customize}}customizing{{/if}}' contenteditable='{{canEdit}}'>{{this}}</li>
         {{/lists}}
+        {{#if canEdit && !customize}}
         <li class='{{#if canEdit}}edit{{/if}} {{#if customize}}customizing{{/if}}'>
             <input
                 on-enter='{{#unless customize}}create{{/unless}}'
                 value='{{newLI}}'
                 disabled='{{!canEdit}}'/>
         </li>
+        {{/if}}
     </ul>
   </script>
 
@@ -41,7 +43,12 @@
         style='background-color: {{themeColor}}'
         on-click='{{#if customize}}selectEl{{/if}}'>
 
-        <div class='option customize {{#if customize}}selected{{/if}}' on-click='toggle-customize'>
+        <div class='option edit-toggle{{#if customize}}selected{{/if}}'
+             on-click='toggle-edit'>
+            {{#if edit}}🔓{{else}} 🔏 {{/if}}
+        </div>
+        <div class='option customize {{#if customize}}selected{{/if}}'
+             on-click='toggle-customize'>
             🎨
         </div>
 

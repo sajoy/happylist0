@@ -17,7 +17,7 @@ var List = Ractive.extend({
 
   computed: {
     canEdit: function () {
-        return !this.get( 'customize' );
+        return this.get( 'edit' );
     }
   },
 
@@ -43,8 +43,14 @@ var Sidebar = Ractive.extend({
 
   oninit () {
       this.on( 'toggle-customize', function () {
+        this.set( 'edit', false );
         this.toggle( 'customize' );
         this.toggle( 'open' );
+      });
+
+      this.on( 'toggle-edit', function () {
+        if ( this.get( 'customize' ) ) { return; }
+        this.toggle( 'edit' );
       });
 
       this.on( 'saveStyles', function () {

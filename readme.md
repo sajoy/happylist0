@@ -29,8 +29,8 @@
 # progress
 * 1/1/2016 - example of a list in edit mode; ability to toggle the sidebar, customize mode; example of real time updating styles
 * 1/2/2016 - separate edit from customize mode, add hover styles, use components for sidebar and lists
+* 1/3/2016 - add toggle button for edit mode
 
 # todo
-* add toggle to turn off edit mode
 * make edit-styles into its own component
 * figure how to store, populate, update styles
