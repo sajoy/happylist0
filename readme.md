@@ -2,7 +2,7 @@
 * micro-blogging for the cumpulsive list maker
 * for happy lists, wish lists, qualitative self lists, all the selfies, etc.
 * with full (or a lot of) css customization to inspire people to learn css
-* brake it: [http://sajoy.github.io/happylist0/](http://sajoy.github.io/happylist0/)
+* break it: [http://sajoy.github.io/happylist0/](http://sajoy.github.io/happylist0/)
 
 # user stories
 ###### editing lists
@@ -27,4 +27,10 @@
 
 
 # progress
-* 1/1/2015 - example of a list in edit mode; ability to toggle the sidebar, customize mode; example of real time updating styles
+* 1/1/2016 - example of a list in edit mode; ability to toggle the sidebar, customize mode; example of real time updating styles
+* 1/2/2016 - separate edit from customize mode, add hover styles, use components for sidebar and lists
+
+# todo
+* add toggle to turn off edit mode
+* make edit-styles into its own component
+* figure how to store, populate, update styles
