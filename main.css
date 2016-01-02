@@ -52,6 +52,15 @@ input, input:focus {
     max-width: 80%;
 }
 
+.edit:hover {
+    background-color: lightblue;
+    width: max-content;
+}
+.customizing:hover {
+    border: lightgray dashed 1px;
+    width: max-content;
+}
+
 /*       sidebar       */
 
 #sidebar {

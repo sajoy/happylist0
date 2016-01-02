@@ -17,15 +17,15 @@
   </script>
 
   <script id='list-template' type='text/ractive'>
-    <h1 contenteditable='{{canEdit}}'>{{name}}</h1>
-    <h2 contenteditable='{{canEdit}}'>{{subtitle}}</h2>
+    <h1 class='{{#if canEdit}}edit{{/if}} {{#if customize}}customizing{{/if}}' contenteditable='{{canEdit}}'>{{name}}</h1>
+    <h2 class='{{#if canEdit}}edit{{/if}} {{#if customize}}customizing{{/if}}' contenteditable='{{canEdit}}'>{{subtitle}}</h2>
 
     <ul>
         <li><a href='#'> {{'<<'}} </a></li>
         {{#lists}}
-            <li contenteditable='{{canEdit}}'>{{this}}</li>
+            <li class='{{#if canEdit}}edit{{/if}} {{#if customize}}customizing{{/if}}' contenteditable='{{canEdit}}'>{{this}}</li>
         {{/lists}}
-        <li>
+        <li class='{{#if canEdit}}edit{{/if}} {{#if customize}}customizing{{/if}}'>
             <input
                 on-enter='{{#unless customize}}create{{/unless}}'
                 value='{{newLI}}'
@@ -36,7 +36,8 @@
 
   <script id='sidebar-template' type='text/ractive'>
     <section id='sidebar'
-        class='{{#if open}}open{{/if}}'
+        class='{{#if open}}open{{/if}}
+               {{#if customize}}customizing{{/if}}'
         style='background-color: {{themeColor}}'
         on-click='{{#if customize}}selectEl{{/if}}'>
 

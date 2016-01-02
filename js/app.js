@@ -4,12 +4,13 @@ var List = Ractive.extend({
 
   data: function () {
       return {
-          name: '#cloudwatching',
-          subtitle: 'bc clouds are cool and stuff',
+          name: 'things to make lists of',
+          subtitle: 'bc lists are cool and stuff',
           newLI: 'new item',
           lists: [
-              'cirrus, Kansas, 6/12/14 ',
-              'crazy freaking storm clouds, also Kansas, 6/14/14'
+              'ingredients in pumpkin pie',
+              'things I never want to do',
+              'best days ever (and why)'
           ]
       }
   },
@@ -58,8 +59,8 @@ var list = new List(),
         el: document.body,
         template: '#container-template',
         data: {
-            customize: true, //false,
-            open: true, //false,
+            customize: false,
+            open: false,
             edit: false
         },
         components: {
@@ -71,6 +72,7 @@ var list = new List(),
                 // select element
                 // populate edit-styles with styles of element
                 // where / how to save / inject the styles?
+                // how to show all of its styles? hover, etc
 
                 var attr = e.node.attributes;
                 console.log( attr );
